@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/main/{{team.id}}/updateteam" method="POST">
+        {% csrf_token %}
+        <h2>Update This Team</h2>
+        <input type="text" name="city" value="{{team.city}}">
+        <br><br>
+        <input type="text" name="mascot" value="{{team.mascot}}">
+        <br><br>
+        <select name="division">
+            <option value="AFC East">AFC East</option>
+            <option value="AFC North">AFC North</option>
+            <option value="AFC South">AFC South</option>
+            <option value="AFC West">AFC West</option>
+            <option value="NFC East">NFC East</option>
+            <option value="NFC North">NFC North</option>
+            <option value="NFC South">NFC South</option>
+            <option value="NFC West">NFC West</option>
+        </select>
+        <br><br>
+        <input type="text" name="overall_wins" value="{{team.overall_wins}}">
+        <br><br>
+        <input type="text" name="overall_losses" value="{{team.overall_losses}}">
+        <br><br>
+        <input type="text" name="conf_wins" value="{{team.conf_wins}}">
+        <br><br>
+        <input type="text" name="conf_losses" value="{{team.conf_losses}}">
+        <br><br>
+        <input type="text" name="primary_color" value="{{team.primary_color}}">
+        <br><br>
+        <input type="text" name="secondary_color" value="{{team.secondary_color}}">
+        <br><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
